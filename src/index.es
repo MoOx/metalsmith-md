@@ -20,7 +20,13 @@ export default (options) => {
       }
 
       files[file].contents = new Buffer(
-        markedInstance(files[file].contents.toString())
+        markedInstance(files[file].contents.toString(), {
+          __metalsmith: {
+            ...options,
+            __filename: file,
+            metalsmith,
+          },
+        })
       )
     })
   }
