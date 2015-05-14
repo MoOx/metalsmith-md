@@ -5,9 +5,9 @@ import marked from "marked"
 export default (options) => {
   options = {
     test: /\.(txt|md|markdown)$/,
+    marked,
+    ...options,
   }
-
-  const markedInstance = options.marked || marked
 
   return (files, metalsmith, done) => {
     setImmediate(done)
@@ -20,7 +20,7 @@ export default (options) => {
       }
 
       files[file].contents = new Buffer(
-        markedInstance(files[file].contents.toString(), {
+        options.marked(files[file].contents.toString(), {
           __metalsmith: {
             ...options,
             __filename: file,

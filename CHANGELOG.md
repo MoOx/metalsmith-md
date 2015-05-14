@@ -1,3 +1,7 @@
+# 1.1.1 - 2015-05-14
+
+- Fixed: provided & default options are correctly passed and merged
+
 # 1.1.0 - 2015-05-14
 
 - Added: some options are passed to the marked instance in a `__metalsmith` property
