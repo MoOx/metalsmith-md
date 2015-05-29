@@ -1,3 +1,7 @@
+# 2.0.1 - 2015-05-30
+
+- Fixed: `pattern` option now works as expected
+
 # 2.0.0 - 2015-05-30
 
 - Changed: engine is now [markdown-it](https://markdown-it.github.io/)

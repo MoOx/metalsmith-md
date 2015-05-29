@@ -1,10 +1,8 @@
-import path from "path"
-
 import markdown from "markdown-it"
 
 export default (options) => {
   options = {
-    test: /\.(txt|md|markdown)$/,
+    pattern: /\.(txt|md|markdown)$/,
     markdownIt: markdown(),
     ...options,
   }
@@ -15,7 +13,7 @@ export default (options) => {
     Object.keys(files).forEach((file) => {
 
       // only transform markdown files
-      if (!options.test.test(path.extname(file))) {
+      if (!options.pattern.test(file)) {
         return
       }
 
