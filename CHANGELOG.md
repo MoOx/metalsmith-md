@@ -1,3 +1,8 @@
+# 2.0.0 - 2015-05-30
+
+- Changed: engine is now [markdown-it](https://markdown-it.github.io/)
+- Changed: `test` option is now `pattern`
+
 # 1.1.1 - 2015-05-14
 
 - Fixed: provided & default options are correctly passed and merged

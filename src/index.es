@@ -1,11 +1,11 @@
 import path from "path"
 
-import marked from "marked"
+import markdown from "markdown-it"
 
 export default (options) => {
   options = {
     test: /\.(txt|md|markdown)$/,
-    marked,
+    markdownIt: markdown(),
     ...options,
   }
 
@@ -20,13 +20,7 @@ export default (options) => {
       }
 
       files[file].contents = new Buffer(
-        options.marked(files[file].contents.toString(), {
-          __metalsmith: {
-            ...options,
-            __filename: file,
-            metalsmith,
-          },
-        })
+        options.markdownIt.render(files[file].contents.toString())
       )
     })
   }
