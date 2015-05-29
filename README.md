@@ -27,7 +27,7 @@ new Metalsmith("./")
         html: true,
         linkify: true,
         typographer: true,
-        highlight: (code, language) => {
+        highlight: (code, lang) => {
           code = code.trim()
 
           // language is recognized by highlight.js
@@ -44,11 +44,11 @@ new Metalsmith("./")
 
           // use external default escaping
           return ''
-        })
-          //.use(...)
-          //.use(...)
-          ,
-      }),
+        },
+      })
+        //.use(...)
+        //.use(...)
+      ,
     })
   )
   .build(err => {if (err) {throw err}})
